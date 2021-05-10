@@ -159,14 +159,14 @@ int main(int argc, char *argv[]){
 		printf("%d,",array1[i]);
 	}
 	printf("\n\n");
-    auto start = std::chrono::high_resolution_clock::now();
-    auto stop = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
-		
+	auto start = std::chrono::high_resolution_clock::now();
+	auto stop = std::chrono::high_resolution_clock::now();
+	auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
+
 	start = std::chrono::high_resolution_clock::now();
 	merge_short_big_first(array1, LENGHT);
-    stop = std::chrono::high_resolution_clock::now();
-    duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
+	stop = std::chrono::high_resolution_clock::now();
+	duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
 	printf("time: %lu nanoseconds\n\n",duration.count());
 
 	for(int i = 0; i < LENGHT;i++){
