@@ -1,9 +1,9 @@
-//g++ -O2 mergeshort.cpp -o mergeshort && ./mergeshort
+//g++ -O2 mergesort.cpp -o mergesort && ./mergesort
 #include <stdio.h>
 #include <random>
 #include <chrono>
 
-void merge_short_small_first(unsigned int* _start_arr, unsigned int _lenght){
+void merge_sort_small_first(unsigned int* _start_arr, unsigned int _lenght){
 	unsigned int k = 1;
 	unsigned int array2[_lenght];
 	unsigned int* array[2] = {_start_arr, array2};
@@ -76,7 +76,7 @@ void merge_short_small_first(unsigned int* _start_arr, unsigned int _lenght){
 	}
 }
 
-void merge_short_big_first(unsigned int* _start_arr, unsigned int _lenght){
+void merge_sort_big_first(unsigned int* _start_arr, unsigned int _lenght){
 	unsigned int k = 1;
 	unsigned int array2[_lenght];
 	unsigned int* array[2] = {_start_arr, array2};
@@ -164,7 +164,7 @@ int main(int argc, char *argv[]){
 	auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
 
 	start = std::chrono::high_resolution_clock::now();
-	merge_short_big_first(array1, LENGHT);
+	merge_sort_big_first(array1, LENGHT);
 	stop = std::chrono::high_resolution_clock::now();
 	duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
 	printf("time: %lu nanoseconds\n\n",duration.count());
